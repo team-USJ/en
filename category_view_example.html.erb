@@ -5,11 +5,11 @@
     
     <!--case文でeachされたcategoryのnameを判断-->
     <!--音楽だったら1、趣味だったら2を@passに入れる-->
-    <% case category.name do %>
-        <% when "音楽" then @pass = 1 %>
-        <% when "趣味" then @pass = 2 %>
-        <% when "車・バイク" then @pass = 3 %>
-        <% when "健康" then @pass = 4 %>
+    <% case category.name %>
+        <%= when "音楽" then @pass = 1 %>
+        <%= when "趣味" then @pass = 2 %>
+        <%= when "車・バイク" then @pass = 3 %>
+        <%= when "健康" then @pass = 4 %>
     <% end %>
     
     <!--@passの数値によってlink_toの宛先を変える。コントローラをそれぞれ別にする-->
