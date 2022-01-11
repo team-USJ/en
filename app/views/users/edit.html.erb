@@ -1,0 +1,36 @@
+<div class='container my-5'>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="row offset-lg-5 offset-2 my-5">マイページ編集</h2>
+        <%= form_with model:@user, url:user_path, local:true do |f| %>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :画像, class: "col-lg-2 col-12" %>
+              <%= f.attachment_field :profile_image %>
+            </div>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :名前, class: "col-lg-2 col-12" %>
+              <%= f.text_field :name, placeholder:"名前", class: 'col-lg-6 col-12 form-control' %>
+            </div>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :性, class: "col-lg-2 col-12" %>
+              <%= f.text_field :gender, placeholder:"性別", class: 'col-lg-6 col-12 form-control' %>
+            </div>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :年齢, class: "col-lg-2 col-12" %>
+              <%= f.text_field :age, placeholder:"○○歳", class: 'col-lg-6 col-12 form-control' %>
+            </div>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :出身地, class: "col-lg-2 col-12" %>
+              <%= f.text_field :prefecture, placeholder:"○○県", class: 'col-lg-6 col-12 form-control' %>
+            </div>
+            <div class="row form-group col-lg-8 col-12 offset-lg-3">
+              <%= f.label :自己紹介文, class: "col-lg-2 col-12" %>
+              <%= f.text_field :introduction, placeholder:"自己紹介文", class: 'col-lg-6 col-12 form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.submit "登録", class: 'user-botn btn btn-outline-secondary col-lg-2 col-6 offset-lg-5 offset-3' %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>

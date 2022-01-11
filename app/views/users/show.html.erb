@@ -1,0 +1,35 @@
+<div class='container px-5 px-sm-0 my-5'>
+  <div class='row'>
+    <div class="col-lg-2 col-12 mt-4 offset-lg-2">
+            <%= attachment_image_tag @user, :profile_image, format:'jpeg', fallback:"no_image.jpg", class:"img-fluid" %>
+          </div>
+          <div class="col-lg-5 col-12 offset-lg-1 mt-4 mr-auto">
+            <table class="table">
+              <tr>
+                <th>名前</th>
+                <th><%= @user.name %></th>
+              </tr>
+              <tr>
+                <th>性</th>
+                <th><%= @user.gender %></th>
+              </tr>
+              <tr>
+                <th>年齢</th>
+                <th><%= @user.age %></th>
+              </tr>
+              <tr>
+                <th>出身地</th>
+                <th><%= @user.prefecture %></th>
+              </tr>
+              <tr>
+                <th>自己紹介</th>
+                <th><%= @user.introduction %></th>
+              </tr>
+            </table>
+            <div class="link-edit row">
+              <%= link_to '編集', edit_user_path(@user.id), class:"col-12 btn btn_success" %>
+            </div>
+          </div>
+    </div>
+  </div>
+</div
