@@ -1,0 +1,30 @@
+
+<% @categories.each do |category| %>
+    <!--表示されるのはカテゴリ名のみ-->
+    <%= category.name %>
+    
+    <!--case文でeachされたcategoryのnameを判断-->
+    <!--音楽だったら1、趣味だったら2を@passに入れる-->
+    <% case category.name %>
+        <%= when "音楽" then @pass = 1 %>
+        <%= when "趣味" then @pass = 2 %>
+        <%= when "車・バイク" then @pass = 3 %>
+        <%= when "健康" then @pass = 4 %>
+    <% end %>
+    
+    <!--@passの数値によってlink_toの宛先を変える。コントローラをそれぞれ別にする-->
+    <% if(@pass=1) %>
+        <!--音楽カテゴリの投稿一覧ページへ(musicコントローラのインデックスに飛ぶ)-->
+        <%= link_to "音楽", musics_pass %>
+    <% elsif(@pass=2) %>
+        <!--趣味カテゴリの投稿一覧ページへ(hobbyコントローラのインデックスに飛ぶ)-->
+        <%= link_to "趣味", hobbies_pass %>
+    <% elsif(@pass=3) %>
+        <!--車・バイクカテゴリの投稿一覧ページへ(carsコントローラのインデックスに飛ぶ)-->
+        <%= link_to "車・バイク", cars_pass %>
+    <% else%>
+        <!--elseは@pass=4しかないので健康カテゴリの投稿一覧ページへ(healthコントローラのインデックスページへ飛ぶ)-->
+        <%= link_to "健康", healths_pass %>
+    <% end %>
+    
+<% end %>
