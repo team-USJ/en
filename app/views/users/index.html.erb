@@ -1,0 +1,17 @@
+<h2>Users一覧</h2>
+<table>
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>出身県</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each %>
+        <tr>
+            <td><%= @users.name %></td>
+            <td><%= @users.from_ken %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
