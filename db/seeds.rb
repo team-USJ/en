@@ -12,13 +12,13 @@ Category.create!(
             name: "音楽" 
         },
         {
-            name: "趣味"
+            name: "お酒"
         },
         {
-            name: "車・バイク"
+            name: "自動車"
         },
         {
-            name: "健康"
+            name: "グルメ"
         }
     ]
 )

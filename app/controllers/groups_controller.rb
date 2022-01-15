@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   def index
     @user = current_user
     @groups = Group.all
+    @category = Category.all
   end
 
   def show
