@@ -13,6 +13,20 @@
         	<th><%= @user.introduction %></th>
     	  </tr>
         </table>
+        
+        <% @category.each do |category| %>
+          <div>
+            <% if(category.name == "音楽") %>
+              <%= link_to "音楽", musics_groups_path %>
+            <% elsif(category.name == "グルメ") %>
+              <%= link_to "グルメ", root_path %>
+            <% elsif(category.name == "趣味") %>
+              <%= link_to "趣味", root_path %>
+            <% else %>
+              <%= link_to "車・バイク", root_path %>
+            <% end %>
+          </div>
+        <% end %>
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>@Group</h2>

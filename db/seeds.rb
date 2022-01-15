@@ -18,7 +18,7 @@ Category.create!(
             name: "車・バイク"
         },
         {
-            name: "健康"
+            name: "グルメ"
         }
     ]
 )
