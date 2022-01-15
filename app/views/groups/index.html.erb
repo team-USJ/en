@@ -15,7 +15,36 @@
         </table>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <h2>@Group</h2>
-    </div>
+      <h2>Group List</h2>
+        <table class='table table-hover table-inverse'>
+        <thead>
+          <tr>
+            <div>
+              <%=link_to "グループを作成する",new_group_path %>  <%#=link_to "グループ一覧",groups_path %>
+            </div>
+
+            <th></th>
+            <th>グループ名</th>
+            <th>紹介文</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @groups.each do |group| %>
+            <tr>
+              <td><%= attachment_image_tag group, :image, format: "jpeg", fallback: "no_image.jpg", size: "40x40" %></td>
+              <td><%= link_to group.name, group_path(group) %></td>
+              <td><%= group.introduction %></td>
+              <td><i class="fas fa-users"></i><%= group.users.count %></td>
+              <td>
+                <% if group.owner_id == current_user.id %>
+                  <%= link_to 'Edit', edit_group_path(group), class: "btn btn-sm btn-success" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>  <!--(br:19)-->
+    </div>  <!--(col-md-8 offset-md-1)-->
   </div>
-</div>
+</div> <!--container-->
