@@ -15,7 +15,7 @@ Category.create!(
             name: "お酒"
         },
         {
-            name: "車・バイク"
+            name: "自動車"
         },
         {
             name: "グルメ"
