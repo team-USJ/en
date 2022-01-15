@@ -16,12 +16,13 @@
         
         <% @category.each do |category| %>
           <div>
+            <!--それぞれの作りたいカテゴリーでのコミュニティ一覧ページへのパスを記入お願いします-->
             <% if(category.name == "音楽") %>
               <%= link_to "音楽", musics_groups_path %>
             <% elsif(category.name == "グルメ") %>
               <%= link_to "グルメ", root_path %>
-            <% elsif(category.name == "趣味") %>
-              <%= link_to "趣味", root_path %>
+            <% elsif(category.name == "お酒") %>
+              <%= link_to "お酒", root_path %>
             <% else %>
               <%= link_to "車・バイク", root_path %>
             <% end %>
