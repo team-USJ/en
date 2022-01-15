@@ -4,32 +4,43 @@
     <title>En</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light" >
+  <body class = "d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-light">
         <div class="container">
-          <div>
-            <%= link_to root_path, class: "navbar-brand", local: true do %>
-            <h5 class="lo">en</h5>
-            <% end %>
-          </div>
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse flex-column" id="navbarNavDropdown">
+          <a class="navbar-brand navbar-dark p-3" href="/">en</a>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-               <% if user_signed_in? %>
-                <li class="nav-item mr-1"><%= link_to "マイページ", user_path(current_user.id), class: "nav-link " %></li>
-                <li class="nav-item mr-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link " %></li>
-              <% else %>
-                <li class="nav-item mr-1"><%= link_to "新規登録", new_user_registration_path, class: "nav-link " %></li>
-                <li class="nav-item mr-1"><%= link_to "ログイン", new_user_session_path, class: "nav-link " %></li>
-              <% end %>
+            <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "コミュニティ", groups_path, class: 'nav-link text-dark' %>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+            </li>
+
+            <% end %>
             </ul>
           </div>
         </div>

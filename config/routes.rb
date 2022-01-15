@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   devise_for :users
   resources :users
+  resources :groups
 end
