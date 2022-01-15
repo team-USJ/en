@@ -16,3 +16,32 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+// .navbar-toggle {
+//     z-index: 2;
+// }
+
+.navbar-brand {
+    // position: absolute;  ハンバーガーメニュー開かなくなる
+    // width: 100%;
+    left: 0;
+    top: 0;
+    text-align:center;
+    margin: auto;
+}
+
+// a{
+// 　text-decoration: none;
+// }
+
+// .navbar ul li a:hover {
+//   text-decoration: underline;
+// }
+
+
+
+@media (min-width: 768px) {
+    .navbar-brand-center {
+        margin-left: 0 !important;
+    }
+}
