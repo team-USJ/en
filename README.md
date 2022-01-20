@@ -9,5 +9,5 @@
 * 「人との縁」を大事にする。つながりをもつ。
 
 ## 計画書
-＊ ER図
+* ER図
 https://drive.google.com/file/d/1tH3yYVMHKdyc5FCIsDlFUPF2cwOAI1UA/view?usp=sharing
