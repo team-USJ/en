@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_080833) do
+ActiveRecord::Schema.define(version: 2022_01_20_044408) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2022_01_07_080833) do
     t.string "introduction"
     t.string "image_id"
     t.integer "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "category_id"
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "category_id"
+    t.string "artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

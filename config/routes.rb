@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :groups do
     get "join" =>"groups#join"
   end
-  get "musics/groups" => "musics#groups"
+  get "music/groups" => "musics#groups"
+  
 end
