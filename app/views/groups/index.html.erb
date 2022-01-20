@@ -3,17 +3,9 @@
     <div class='col-md-3'>
       <h2>ユーザー情報</h2>
         <table class="table">
-          <tr><%= attachment_image_tag @user, :profile_image, size:"100x100", format:'jpeg', fallback:"no_image.jpg" %></tr>
-          <tr>
-            <th>name</th>
-        	<th><%= @user.name %></th>
-          </tr>
-          <tr>
-        	<th>introduction</th>
-        	<th><%= @user.introduction %></th>
-    	  </tr>
+    	     <%= render 'users/user_info', user: @user %> 
         </table>
-        
+
         <% @category.each do |category| %>
           <div>
             <!--それぞれの作りたいカテゴリーでのコミュニティ一覧ページへのパスを記入お願いします-->
