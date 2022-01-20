@@ -1,24 +1,13 @@
-# README
+# en
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+* プログラミングスクール卒業後、卒業生ともう一度チーム開発をしたいと思い、発足したプロジェクトです。
+* 趣味やビジネスでコミュニティを作りたい、人脈を増やしたい方に向けたコミュニティサイト。
+* サークル作成・入会、チャット機能、日程調整が可能。
 
-Things you may want to cover:
+## サイトテーマ
+* 「人との縁」を大事にする。つながりをもつ。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 計画書
+＊ ER図
+https://drive.google.com/file/d/1tH3yYVMHKdyc5FCIsDlFUPF2cwOAI1UA/view?usp=sharing
