@@ -1,17 +1,30 @@
-<h2>Users一覧</h2>
-<table>
-    <thead>
-        <tr>
-            <th>名前</th>
-            <th>出身県</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @users.each %>
-        <tr>
-            <td><%= @users.name %></td>
-            <td><%= @users.from_ken %></td>
-        </tr>
+<div class='container px-5 px-sm-0 my-5'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>ユーザー一覧</h2>
+        <table class="table">
+          <tr><%= attachment_image_tag @user, :profile_image, size:"100x100", format:'jpeg', fallback:"no_image.jpg" %></tr>
+          <tr>
+            <th>name</th>
+        	<th><%= @user.name %></th>
+          </tr>
+          <tr>
+        	<th>introduction</th>
+        	<th><%= @user.introduction %></th>
+    	  </tr>
+        </table>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>カレンダー</h2>
+        <div>
+         <%=link_to "グループを作成する",new_group_path %>  <%#=link_to "グループ一覧",groups_path %>
+        </div>
+        <%= month_calendar events: @group do |date, groups| %>
+          <%= date.day %>
+            <% groups.each do |group| %>
+              <%= link_to group.name, group_path(group) %>
+          <% end %>
         <% end %>
-    </tbody>
-</table>
+    </div>  <!--(col-md-8 offset-md-1)-->
+  </div>
+</div> <!--container-->
