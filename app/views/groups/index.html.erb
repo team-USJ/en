@@ -18,7 +18,7 @@
           <div>
             <!--それぞれの作りたいカテゴリーでのコミュニティ一覧ページへのパスを記入お願いします-->
             <% if(category.name == "音楽") %>
-              <%= link_to "音楽", musics_groups_path %>
+              <%= link_to "音楽", music_groups_path %>
             <% elsif(category.name == "グルメ") %>
               <%= link_to "グルメ", root_path %>
             <% elsif(category.name == "お酒") %>
@@ -43,6 +43,8 @@
             <th>紹介文</th>
             <th>日付</th>
             <th colspan="4"></th>
+            <th>カテゴリ</th>
+            <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
@@ -52,6 +54,11 @@
               <td><%= link_to group.name, group_path(group) %></td>
               <td><%= group.introduction %></td>
               <td><%= group.start_time.strftime("%Y年%m月%d日") %></td>
+              <% if Category.find(group.category_id).name.present? %>
+                <td><%= Category.find(group.category_id).name %></td>
+              <% else %>
+                <td><p>なし</p></td>
+              <% end%>
               <td><i class="fas fa-users"></i><%= group.users.count %></td>
               <td>
                 <% if group.owner_id == current_user.id %>

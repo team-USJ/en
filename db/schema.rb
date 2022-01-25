@@ -40,7 +40,16 @@ ActiveRecord::Schema.define(version: 2022_01_23_111619) do
     t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
     t.datetime "start_time"
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "category_id"
+    t.string "artist"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
