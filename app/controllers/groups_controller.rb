@@ -58,7 +58,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :introduction, :image, :category_id)
+    params.require(:group).permit(:name, :introduction, :image, :start_time, :user_id, :category_id)
   end
 
   def ensure_correct_user

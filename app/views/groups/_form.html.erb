@@ -18,7 +18,10 @@
     <%= f.label :グループ画像 %>
     <%= f.attachment_field :image, class: "form-control-file" %>
   </div>
-
+  <div class="form-group">
+    <%= f.label :日時, class: "time_date my-3" %>
+    <%= f.datetime_select :start_time %></br>
+  </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-info' %>
   </div>
