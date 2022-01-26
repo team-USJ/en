@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
+    @users = User.all
+    @group = current_user.groups
+  end
+
+  def calendar
+    # @user = User.find(params[:id])
+    @user = current_user
+    @users = User.all
     @group = current_user.groups
   end
 

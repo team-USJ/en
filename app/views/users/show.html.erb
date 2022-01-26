@@ -1,6 +1,8 @@
 <div class='container px-5 px-sm-0 my-5'>
   <div class='row'>
-    <%=link_to "カレンダー",users_path %>
+    <%# if user_signed_in? && current_user  %>
+      <%#=link_to "カレンダー",user_calendar_path %>
+    <%# end %>
     <div class="col-lg-2 col-12 mt-4 offset-lg-2">
             <%= attachment_image_tag @user, :profile_image, format:'jpeg', fallback:"no_image.jpg", class:"img-fluid" %>
           </div>
@@ -27,8 +29,8 @@
                 <th><%= @user.introduction %></th>
               </tr>
             </table>
-        
-        
+
+
             <div class="link-edit row">
               <%= link_to '編集', edit_user_path(@user.id), class:"col-12 btn btn_success" %>
             </div>

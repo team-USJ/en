@@ -1,30 +1,20 @@
-<div class='container px-5 px-sm-0 my-5'>
+<div class='container'> <!--px-5 px-sm-0 my-5-->
   <div class='row'>
     <div class='col-md-3'>
       <h2>ユーザー一覧</h2>
-        <table class="table">
-          <tr><%= attachment_image_tag @user, :profile_image, size:"100x100", format:'jpeg', fallback:"no_image.jpg" %></tr>
-          <tr>
-            <th>name</th>
-        	<th><%= @user.name %></th>
-          </tr>
-          <tr>
-        	<th>introduction</th>
-        	<th><%= @user.introduction %></th>
-    	  </tr>
-        </table>
+        <!--<table class="table">-->
+      <ul class="users">
+           <% @users.each do |user| %>
+        <li>
+         <%= link_to user.name, user %>
+        </li>
+        <%= attachment_image_tag user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "40x40" %>
+         <% end %>
+     </ul>
+
+
+
+        <!--</table>-->
     </div>
-    <div class='col-md-8 offset-md-1'>
-      <h2>カレンダー</h2>
-        <div>
-         <%=link_to "グループを作成する",new_group_path %>  <%#=link_to "グループ一覧",groups_path %>
-        </div>
-        <%= month_calendar events: @group do |date, groups| %>
-          <%= date.day %>
-            <% groups.each do |group| %>
-              <%= link_to group.name, group_path(group) %>
-          <% end %>
-        <% end %>
-    </div>  <!--(col-md-8 offset-md-1)-->
   </div>
 </div> <!--container-->

@@ -31,21 +31,15 @@
               </td>
               <td><%= @group.start_time.strftime("%Y年%m月%d日 %H:%M") %></td>
               <td>
-             <% if @group.owner_id == current_user.id %>
+                 <% if @group.owner_id == current_user.id %>
                    <%= link_to '編集', edit_group_path(@group), class: "btn btn-sm btn-success" %>
-             <% elsif @group.users.include?(current_user) %>
+                 <% elsif @group.users.include?(current_user) %>
                    <%= link_to 'コミュニティを退会', group_path(@group), method: :delete, class: "btn btn-sm btn-danger" %>
-             <% else %>
+                 <% else %>
                    <%= link_to 'コミュニティに参加', group_join_path(@group), class: "btn btn-sm btn-success" %>
-             <% end %>
-
-            <!--<%# if @group.owner_id == current_user.id %>-->
-            <!--  <%#= link_to 'Edit', edit_group_path(@group), class: "btn btn-sm btn-success" %>-->
-            <!--  <%#= link_to 'グループ削除',group_all_destroy_path(@group),method: :delete,data: { confirm: '本当に削除しますか？' } ,-->
-            <!--  class: "btn btn-sm btn-outline-danger" %>-->
-
-          </td>
-         </tr>
+                <% end %>
+              </td>
+           </tr>
         </tbody>
       </table>
     </div>
