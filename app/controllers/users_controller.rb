@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def index
+    @user = current_user
+    @group = current_user.groups
+  end
+
+
   def show
     @user = User.find(params[:id])
     @relationship = Relationship.new
@@ -22,5 +28,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :introduction, :profile_image, :gender, :age, :prefecture)
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :introduction, :image, :start_time)
   end
 end
