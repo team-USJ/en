@@ -17,9 +17,9 @@
     <div class='col-md-8 offset-md-1'>
       <h2>カレンダー</h2>
         <div>
-         <%=link_to "グループを作成する",new_group_path %>  <%#=link_to "グループ一覧",groups_path %>
+         <%=link_to "グループを作成する",new_group_path %>
         </div>
-        <%= month_calendar events: @group do |date, groups| %>
+        <%= month_calendar events: @group do |date, groups| %> <!--カレンダー表示-->
           <%= date.day %>
             <% groups.each do |group| %>
               <%= link_to group.name, group_path(group) %>
